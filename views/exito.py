@@ -129,16 +129,100 @@ El objetivo es identificar si ambos conceptos coinciden o representan fenómenos
 
     st.divider()
 
+    # ==================================================
+    # VALIDACIÓN CON JUEGOS RECIENTES
+    # ==================================================
+
+    st.divider()
+
+    st.subheader("🔄 Validación con juegos recientes (2022-2025)")
+
+    st.markdown("""
+    Como validación adicional, se revisaron los títulos más destacados
+    publicados después de 2021 para comprobar si las tendencias observadas
+    siguen vigentes en la actualidad.
+    """)
+
+    left, center, right = st.columns([3, 1.2, 3])
+
+    # TOP VALORADOS
+
+    with left:
+
+        st.markdown("#### ⭐ Más valorados")
+
+        recent_rated = pd.DataFrame({
+            "Juego": [
+                "SETI",
+                "Dune: Imperium Uprising",
+                "Arcs",
+                "Earth",
+                "Harmonies",
+                "Sky Team",
+                "Nucleum",
+                "Forest Shuffle",
+                "Bomb Busters",
+                "Finspan"
+            ]
+        })
+
+        st.table(recent_rated)
+
+    # HALLAZGO
+
+    with center:
+
+        st.success(
+            """
+            🔄 Hallazgo
+
+            Muchos de los títulos
+            mejor valorados también
+            aparecen entre los más
+            populares.
+
+            Esto sugiere una mayor
+            convergencia entre éxito
+            crítico y comercial que
+            en los juegos clásicos.
+            """
+        )
+
+    # TOP POSEÍDOS
+
+    with right:
+
+        st.markdown("#### 👥 Más poseídos")
+
+        recent_owned = pd.DataFrame({
+            "Juego": [
+                "Ark Nova",
+                "Earth",
+                "Dune: Imperium Uprising",
+                "Sky Team",
+                "Forest Shuffle",
+                "Harmonies",
+                "Heat",
+                "The White Castle",
+                "Nucleum",
+                "Challengers!"
+            ]
+        })
+
+        st.table(recent_owned)
+
     st.info(
-    """
-    Conclusión rápida
+        """
+        Juegos como Earth, Dune: Imperium Uprising, Sky Team,
+        Forest Shuffle, Harmonies y Nucleum aparecen en ambos rankings.
 
-    Los juegos más populares suelen ser accesibles y fáciles de aprender,
-    mientras que los juegos mejor valorados suelen ser más complejos y especializados.
-    """
-)
+        Esto refuerza parcialmente las conclusiones obtenidas con el dataset histórico
+        y sugiere que algunos lanzamientos recientes consiguen simultáneamente
+        reconocimiento crítico y éxito comercial.
+        """
+    )
 
-    st.markdown("### 🎯 Conclusión ejecutiva")
+    st.markdown("### 🎯 Conclusión")
 
     st.success(
         """
@@ -148,5 +232,9 @@ El objetivo es identificar si ambos conceptos coinciden o representan fenómenos
         Los juegos más accesibles y conocidos suelen alcanzar una mayor
         difusión en el mercado, mientras que los juegos más complejos
         y especializados tienden a concentrar las valoraciones más altas.
+
+        Además, la revisión de títulos publicados entre 2022 y 2025
+        sugiere una convergencia creciente entre popularidad y valoración,
+        reforzando parcialmente las conclusiones obtenidas con el dataset histórico.
         """
     )

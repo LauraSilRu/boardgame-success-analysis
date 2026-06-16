@@ -289,6 +289,41 @@ def load_css():
         color: #1E3A5F !important;
     }
 
+    /* ==================================================
+    TABLAS
+    ================================================== */
+
+    [data-testid="stTable"] table {
+
+        background-color: rgba(244,236,210,0.95);
+
+        border-radius: 12px;
+
+        overflow: hidden;
+
+        border-left: 4px solid #D4A017;
+
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    [data-testid="stTable"] th {
+
+        background-color: #2D4A66 !important;
+
+        color: white !important;
+
+        font-weight: 700 !important;
+
+        text-align: left !important;
+    }
+
+    [data-testid="stTable"] td {
+
+        background-color: rgba(244,236,210,0.95) !important;
+
+        color: #2D4A66 !important;
+    }
+
     </style>
     """, unsafe_allow_html=True)
 
